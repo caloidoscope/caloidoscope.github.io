@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
+        if (!navbarCollapsible || !navbarCollapsible.classList.contains("home-nav")) {
             return;
         }
         if (window.scrollY === 0) {
