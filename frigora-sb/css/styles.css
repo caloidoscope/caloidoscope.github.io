@@ -6089,7 +6089,7 @@ textarea.form-control-lg {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11454,7 +11454,7 @@ p {
 header.masthead {
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  /* background-image: url("../assets/img/header-bg.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11501,10 +11501,11 @@ header.masthead .masthead-overlay .masthead-heading img{
   }
   .masthead-overlay{
     padding-top: 6rem;
+    z-index: 1;
   }
   
   .header-carousel{
-    height: 100vh !important;
+    height: 100% !important;
   }
 }
 
@@ -11918,6 +11919,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .masthead-carousel{
+  height:100%;
   position: absolute;
 }
 
@@ -11925,6 +11927,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   position: relative;
   padding-top: 10.5rem;
   /* padding-bottom: 6rem; */
+  z-index: 1;
 }
 .carousel-img{
   object-fit:cover;
@@ -11997,3 +12000,59 @@ section#contact form#contactForm :-ms-input-placeholder {
 .collapsing {
   transition: none !important;
 }
+
+.header-button-group {
+  padding-bottom: 10px;
+}
+
+.testimonial-image {
+  width:100%;
+  padding: 0px;
+}
+
+.no-pad {
+  padding: 0px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-border {
+  border: 0px;
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+      display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+      display: block;
+  }
+}
+
+#recipeCarousel .carousel-inner .carousel-item.active,
+#recipeCarousel .carousel-inner .carousel-item-next,
+#recipeCarousel .carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  
+  #recipeCarousel .carousel-inner .carousel-item-end.active,
+  #recipeCarousel .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+  
+  #recipeCarousel .carousel-inner .carousel-item-start.active, 
+  #recipeCarousel .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+#recipeCarousel .carousel-inner .carousel-item-end,
+#recipeCarousel .carousel-inner .carousel-item-start { 
+transform: translateX(0);
+}
+
