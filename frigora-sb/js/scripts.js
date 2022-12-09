@@ -9,7 +9,7 @@
 function changeVideo (src) {
     $(".video-container iframe").remove();
     $('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>')
-        .attr("src", "http://www.youtube.com/embed/" + src)
+        .attr("src", "https://www.youtube.com/embed/" + src)
         .appendTo(".video-container");        
     $("html, body").animate({ scrollTop: 0 }, "slow");
 }
