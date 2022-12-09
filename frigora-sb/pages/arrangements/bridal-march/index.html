@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>FRIGORA - Home</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../../css/styles.css" rel="stylesheet" />
+    <link href="../../../css/audio.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-default navbar-dark fixed-top navbar-shrink" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="../../../"><img src="../../../assets/img/header-logo.png" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../#samples">Samples</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../#vocalists">Vocalists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../#arrangements">Arrangements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../#team">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Samples -->
+    <section class="page-section no-pad-bottom">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1>FRIGORA VERSIONS AND SONG ARRANGEMENTS</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <a class="btn btn-outline-dark btn-lg btn-block active" href="../bridal-march/">BRIDAL MARCH</a>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <a class="btn btn-outline-dark btn-md btn-block" href="../first-dance/">FIRST DANCE</a>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <a class="btn btn-outline-dark btn-md btn-block" href="../song-cover/">SONG COVER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="page-section">
+        <div class="container">
+            <!-- <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 style="margin-bottom:60px">BRIDAL MARCH</h1>
+                </div>
+            </div> -->
+            <div class="row text-center">
+                <div class="col-md-5 ">
+                    <div class="music-container" id="music-container">
+                        <div class="music-info">
+                            <h6 id="title"></h6>
+                            <div class="progress-container" id="progress-container">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                            <h6 id="currTime"></h6>
+                        </div>
+                        
+                        <audio src="../../../assets/songs/audio/bridal-march/Bawat Daan - Ebe Dancel.mp3" id="audio"></audio>
+                        <div class="img-container">
+                            <img src="../../../assets/songs/img/logo.png" alt="music-cover" id="cover" />
+                        </div>
+                        <div class="navigation">
+                            <button id="prev" class="action-btn">
+                                <i class="fas fa-backward ap"></i>
+                            </button>
+                            <button id="play" class="action-btn action-btn-big">
+                                <i class="fas fa-play ap"></i>
+                            </button>
+                            <button id="next" class="action-btn">
+                                <i class="fas fa-forward ap"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    
+                </div>
+                <div id = "song-list" class="col-md-5 text-start">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section">
+        <div class="container">
+            <div class="text-center"> 
+                <div class="row text-center">
+                    <div class="col-lg-12"><h4>BOOK NOW</h4>
+                        <div class="row text-center">
+                            <div class="col-lg-12 col-md-12 text-right">
+                                frigoraacoustic@gmail.com • +63 917 824 5081
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../../../js/audio.js"></script>
+    <script>
+        const selectedSongs = ["Turning Page - Sleeping At Last",
+        "Bawat Daan - Ebe Dancel","Bless the Broken Road - Rascal Flatts",
+        "For A Lifetime - Ryann Darling",
+        "You Make My Dreams Come True - Tim Halperin",
+        "I Get To Love You - Ruelle",
+        "Ikaw at Ako - Moira Dela Torre"]
+        initSongs('bridal-march',selectedSongs);
+        var result = ""
+        for (var i = 0; i < selectedSongs.length; i++) {
+            var classNames = "song-item " + (i==0 ? "song-active" : "");
+            result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${selectedSongs[i]}",${i});'>${selectedSongs[i]}</h6>`;
+        }
+        document.getElementById('song-list').innerHTML = result
+        function onClickSong(song,index){
+            loadSong(song);
+            playSong();
+        }
+    </script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script> -->
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../../../js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
