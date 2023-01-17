@@ -29,8 +29,8 @@ function initSongs (selectedDir, selectedSongs){
 // Update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `../../../assets/songs/audio/${dir}/${song}.mp3`;
-  cover.src = '../../../assets/songs/img/logo.png';
+  audio.src = `/frigora-sb/assets/songs/audio/${dir}/${song}.mp3`;
+  cover.src = '/frigora-sb/assets/songs/img/logo.png';
   songIndex = songs.indexOf(song);
 }
 

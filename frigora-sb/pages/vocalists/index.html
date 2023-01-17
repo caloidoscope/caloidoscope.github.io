@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/audio.css" rel="stylesheet" />
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -47,17 +48,8 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/ESTEFFI.jpg" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal1">
-                                            <img src="../../assets/img/vocalists/BURN.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/ESTEFFI.jpg" onclick="onClickVocals('esteffi')" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -67,7 +59,9 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/DITA.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/BURN.jpg" onclick="onClickVocals('burn')" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +70,9 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/JM.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/DITA.jpg" onclick="onClickVocals('dita')" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +81,9 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/VINCE.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/JM.jpg" onclick="onClickVocals('jm')" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +92,20 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/SAM.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/VINCE.jpg" onclick="onClickVocals('vince')" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="col-md-3">
+                                <div class="card no-border">
+                                    <div class="card-img">                                        
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/SAM.jpg" onclick="onClickVocals('sam')" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +114,9 @@
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
-                                        <img src="../../assets/img/vocalists/REMUZ.jpg" class="img-fluid">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/REMUZ.jpg" onclick="onClickVocals('remuz')" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -136,57 +149,57 @@
     </section>
 
 
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" onclick="onClickClose()"/></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <div class ="row text-center">
-                                    <h2 class="text-uppercase">BURN</h2>
+                                    <h2 id ="vocalist-name" class="text-uppercase">BURN</h2>
                                 </div>
                                 <!-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
                                 <div class ="row text-center">
                                     <div class ="col-md-4">
-                                        <img class="img-fluid d-block mx-auto" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
+                                        <img id="vocalist-pic" class="img-fluid d-block mx-auto" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
                                     </div>
                                     <div class ="col-md-8">
-                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                        <div class="simple-audio-player" id="simp" data-config='{"shide_top":false,"shide_btm":false,"auto_load":false}'>
-                                            <div class="simp-playlist">
-                                              <ul>
-                                                <li><span class="simp-source" data-src="http://www.archive.org/download/CanonInD_261/CanoninD.mp3">Canon in D</span><span class="simp-desc">Johann Pachelbel</span></li>
-                                                <li><span class="simp-source" data-src="https://www.script-tutorials.com/demos/363/data/05.mp3">Artist 5</span></li>
-                                                <li><span class="simp-source" data-src="https://www.dropbox.com/s/6pays95q2a9jrsf/2020.01.02.mp3?dl=1" data-cover="https://i.postimg.cc/sDBycWS8/NMS-2019.jpg">Nightmare Side</span><span class="simp-desc">Set Stori</span></li>
-                                                <li class="simp-active"><span class="simp-source" data-src="https://www.dropbox.com/s/k011ag91uktonbv/Angklung%20Preman%20Pensiun.mp3?dl=1">Angklung Preman Pensiun</span></li>
-                                                <li><span class="simp-source" data-src="https://www.dropbox.com/s/prgte33m86n9ce7/Canon%20Rock%20%28JerryC%29%20-%20funtwo.mp3?dl=1">Canon Rock (JerryC)</span><span class="simp-desc">by Funtwo</span></li>
-                                                <li><span class="simp-source" data-src="http://listento.ardanradio.com:1059/;">105.9 FM Ardan Radio</span><span class="simp-desc">Streaming Radio</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/78_jailhouse-rock_elvis-presley-jerry-leiber-mike-stoller_gbia0080595b/Jailhouse%20Rock%20-%20Elvis%20Presley%20-%20Jerry%20Leiber-restored.mp3">Jailhouse Rock</span><span class="simp-desc">Elvis Presley</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/J._Period_and_Michael_Jackson_-_Man_Or_The_Music-2010/17%20Smooth%20Criminal.mp3">Smooth Criminal</span><span class="simp-desc">Michael Jackson</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/OldPop_256/VillagePeople-Y.m.c.a.mp3">Y.M.C.A</span><span class="simp-desc">Village People</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/chuckberryjohnnyb.goode/Chuck%20Berry%20-%20Johnny%20B.%20Goode.mp3">Johnny B. Goode</span><span class="simp-desc">Chuck Berry</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/AnimalsTheHouseOfTheRisingSun_201811/Animals%20-%20The%20House%20Of%20The%20Rising%20Sun.mp3">House of the Rising Sun</span><span class="simp-desc">The Animals</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/DontStopMeNow_255/Queen-DontStopMeNow.mp3">Don't Stop Me Now</span><span class="simp-desc">Queen</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/NeverGonnaGiveYouUpOriginal/Never%20Gonna%20Give%20You%20Up%20Original.mp3">Never Gonna Give You Up</span><span class="simp-desc">Rick Astley</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/gunsnrosessweetchildomine_202003/Guns%20N%27%20Roses%20-%20Sweet%20Child%20%27O%20Mine.mp3">Sweet Child O' Mine</span><span class="simp-desc">Guns N' Roses</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/01.TheFinalCountdown/01.%20The%20Final%20Countdown.mp3">The Final Countdown</span><span class="simp-desc">Europe</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/1MyHeartWillGoOnLoveThemeFromTitanic/1%20-%20My%20Heart%20Will%20Go%20On%20%28Love%20Theme%20from%20_Titanic_%29.mp3">My Heart Will Go On</span><span class="simp-desc">Céline Dion</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/tntvillage_323140/John%20Lennon%20-%20Imagine/01%20Imagine.mp3">Imagine</span><span class="simp-desc">John Lennon</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/TheBeatles1970HeyJudeAppleRecords6e062.0434807HeyJude/The%20Beatles%20-%201970%20-%20Hey%20Jude%20%28Apple%20Records%3B%20%236e%20062.04348%29_07%20-%20Hey%20Jude.mp3">Hey Jude</span><span class="simp-desc">The Beatles</span></li>
-                                                <li><span class="simp-source" data-src="https://archive.org/download/TakeMeHomeCountryRoad/JohnDenver-TakeMeHomeCountryRoad.mp3">Take Me Home, Country Roads</span><span class="simp-desc">John Denver</span></li>
-                                              </ul>
+                                        <div class="music-container" id="music-container">
+                                            <div class="music-info">
+                                                <h6 id="title"></h6>
+                                                <div class="progress-container" id="progress-container">
+                                                    <div class="progress" id="progress"></div>
+                                                </div>
+                                                <h6 id="currTime"></h6>
                                             </div>
-                                            <div class="simp-footer">Made with 💖 &amp; 🙌 by <a href="https://bit.ly/sekedus" target="_blank" title="Sekedus">Sekedus</a></div>
-                                          </div>  
+                                            
+                                            <audio src="../../assets/songs/audio/bridal-march/Bawat Daan - Ebe Dancel.mp3" id="audio"></audio>
+                                            <div class="img-container">
+                                                <img src="../../assets/songs/img/logo.png" alt="music-cover" id="cover" />
+                                            </div>
+                                            <div class="navigation">
+                                                <button id="prev" class="action-btn">
+                                                    <i class="fas fa-backward ap"></i>
+                                                </button>
+                                                <button id="play" class="action-btn action-btn-big">
+                                                    <i class="fas fa-play ap"></i>
+                                                </button>
+                                                <button id="next" class="action-btn">
+                                                    <i class="fas fa-forward ap"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id = "song-list" class="text-start">
+                                        </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <!-- <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>
@@ -194,6 +207,8 @@
             </div>
         </div>
     </div>
+    
+    <script src="../../js/audio.js"></script>
     <script>
         let items = document.querySelectorAll('.carousel .carousel-item')
         items.forEach((el) => {
@@ -209,6 +224,102 @@
                 next = next.nextElementSibling
             }
         })
+
+        function onClickVocals(vocalist){
+            changeModalDetails(vocalist)
+            let selectedSongs = null
+            switch(vocalist) {
+                case 'esteffi':
+                    selectedSongs = ["Runaway - The Corrs",
+                        "Weak - SWV",
+                        "Araw Araw - Ben&Ben",
+                        "As If It's Your Last - BLACK PINK",
+                        "From This Moment - Shania Twain",
+                        "Girl From Ipanema - Sitti, Frank Sinatra",
+                        "Pangako - Regine Velasquez"]
+                    break
+                case 'burn':
+                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
+                        "Araw Gabi - Regine Velasquez",
+                        "Let It Go (Frozen) - Idina Menzel",
+                        "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
+                        "Havana - Camila Cabello",
+                        "Orange Colored Sky - Natalie Cole",
+                        "Bawat Daan - Ebe Dancel"]
+                    break
+                case 'dita':
+                    selectedSongs = ["Yellow - Coldplay",
+                        "Dream A Little Dream of Me - Doris Day",
+                        "Gravity - Sara Bareilles",
+                        "I Wanna Dance With Somebody - Whitney Houston",
+                        "Iris - Stories, Goo Goo Dolls",
+                        "Kahit Maputi Na Ang Buhok Ko - Moira Dela Torre",
+                        "Something I Need - Moira Dela Torre, One Republic"]
+                    break
+                case 'jm':
+                    selectedSongs = ["Locked Out of Heaven - Bruno Mars",
+                        "Mambo No. 5 - Lou Bega",
+                        "Manila Sound Medley",
+                        "Gravity - John Mayer",
+                        "Ikaw at Ako - Johnoy Danao",
+                        "I'll Be Over You - Toto",
+                        "Kahit Maputi Na Ang Buhok Ko - Rey Valera"]
+                    break
+                case 'vince':
+                    selectedSongs = ["Tagpuan - Moira Dela Torre, Erik Santos",
+                        "The Way You Make Me Feel - Michael Jackson",
+                        "Kahit Kailan - South Border  VINCE  FRIGORA (5 Piece Acoustic Band)",
+                        "Love Will Keep Us Alive - Eagles",
+                        "Pagtingin - Ben & Ben",
+                        "Pangarap ko Ang Ibigin Ka - Regine Velasquez"]
+                    break
+                case 'sam':
+                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
+                        "Araw Gabi - Regine Velasquez",
+                        "Let It Go (Frozen) - Idina Menzel",
+                        "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
+                        "Havana - Camila Cabello",
+                        "Orange Colored Sky - Natalie Cole",
+                        "Bawat Daan - Ebe Dancel"]
+                    break
+                case 'remuz':
+                    selectedSongs = ["Let's Groove - Earth, Wind, Fire",
+                        "Peaches - Justin Bieber",
+                        "The Way You Look Tonight - Michael Buble",
+                        "Weak - SWV",
+                        "First Dance Sweetheart - Thomas Rhett",
+                        "If I Ain't Got You x Gravity (Alicia Keys & John Mayer)"]
+                    break
+                default:
+                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
+                            "Araw Gabi - Regine Velasquez",
+                            "Let It Go (Frozen) - Idina Menzel",
+                            "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
+                            "Havana - Camila Cabello",
+                            "Orange Colored Sky - Natalie Cole",
+                            "Bawat Daan - Ebe Dancel"]
+            }
+            initSongs(vocalist,selectedSongs);
+            var result = ""
+            for (var i = 0; i < selectedSongs.length; i++) {
+                var classNames = "song-item " + (i==0 ? "song-active" : "");
+                result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${selectedSongs[i]}",${i});'>${selectedSongs[i]}</h6>`;
+            }
+            document.getElementById('song-list').innerHTML = result
+        }
+
+        function onClickClose(){
+            pauseSong()
+        }
+        function onClickSong(song,index){
+            loadSong(song)
+            playSong()
+        }
+        function changeModalDetails(vocalist){
+            const dir = '/frigora-sb/assets/img/vocalists/' + vocalist + '.jpg'
+            document.getElementById('vocalist-pic').src = dir
+            document.getElementById('vocalist-name').innerHTML = vocalist
+        }
     </script>
 
 
