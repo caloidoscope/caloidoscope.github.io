@@ -1,0 +1,282 @@
+[
+    {
+        "package": "jazz",
+        "title": "Fly Me To The Moon",
+        "artist": "Frank Sinatra",
+        "link": "https://www.youtube.com/embed/1W0UuI4yHZY",
+        "thumbnail_file": "Fly Me To The Moon - Frank Sinatra  Burn  Frigora Acoustic (Jazz Ensemble.jpg"
+    },
+    {
+        "package": "jazz",
+        "title": "Girl From Ipanema",
+        "artist": "Sitti",
+        "link": "https://www.youtube.com/embed/0b3OsfuZElI",
+        "thumbnail_file": "Girl From Ipanema - Sitti  ESTEFFI  FRIGORA (JAZZ ENSEMBLE).jpg"
+    },
+    {
+        "package": "jazz",
+        "title": "Inseparable",
+        "artist": "Natalie Cole",
+        "link": "https://www.youtube.com/embed/P8y-STfUsIo ",
+        "thumbnail_file": "Inseparable - Natalie Cole  Burn  Frigora Acoustic (Jazz Ensemble).jpg"
+    },
+    {
+        "package": "solo",
+        "title": "Ikaw At Ako",
+        "artist": "Johnoy Danao",
+        "link": "https://www.youtube.com/embed/vksCsFHs-UE",
+        "thumbnail_file": "Bridal March Ikaw At Ako - Johnoy Danao  JM  Frigora Acoustic (Solo).jpg"
+    },
+    {
+        "package": "solo",
+        "title": "Para Sa Akin",
+        "artist": "Sitti",
+        "link": "https://www.youtube.com/embed/wXYyyVqcXxI",
+        "thumbnail_file": "Para Sa Akin - Sitti  JM  FRIGORA (DUO).jpg"
+    },
+    {
+        "package": "duo",
+        "title": "Through The Fire",
+        "artist": "Chaka Khan",
+        "link": "https://www.youtube.com/embed/3_k07Ux-Ifw",
+        "thumbnail_file": "Through The Fire - Chaka Khan  DITA  FRIGORA (DUO).jpg"
+    },
+    {
+        "package": "duo",
+        "title": "Bawat Daan",
+        "artist": "Ebe Dancel",
+        "link": "https://www.youtube.com/embed/r7VP019vyFY",
+        "thumbnail_file": "Bawat Daan - Ebe Dancel  Burn   Frigora Acoustic (Duo).jpg"
+    },
+    {
+        "package": "duo",
+        "title": "Araw Araw",
+        "artist": "Ben&Ben",
+        "link": "https://www.youtube.com/embed/EcAg-qDNSOU",
+        "thumbnail_file": "Araw - Araw - Ben & Ben  Esteffi  Frigora Acoustic (Duo).jpg"
+    },
+    {
+        "package": "trio",
+        "title": "Waters Of March",
+        "artist": "Sitti",
+        "link": "https://www.youtube.com/embed/tycYai_waZw",
+        "thumbnail_file": "Waters of March - Sitti, Sérgio Mendes  BURN  FRIGORA (TRIO).jpg"
+    },
+    {
+        "package": "trio",
+        "title": "Dancing In The Moonlight x Fresh Eyes",
+        "artist": "Toploader, Andy Grammer",
+        "link": "https://www.youtube.com/embed/lj5H04BWP5s",
+        "thumbnail_file": "Dancing In The Moonlight x Fresh Eyes Mashup - ESTEFFI & JM  FRIGORA (TRIO).jpg"
+    },
+    {
+        "package": "trio",
+        "title": "Mahika",
+        "artist": "Adie",
+        "link": "https://www.youtube.com/embed/xKtfbCtqJ6o",
+        "thumbnail_file": "Mahika - Adie ft. Janine Berdine  JM & MAYA  FRIGORA (TRIO).jpg"
+    },
+    {
+        "package": "trio",
+        "title": "Weak",
+        "artist": "SWV",
+        "link": "https://www.youtube.com/embed/9LkwoVC2cds",
+        "thumbnail_file": "Weak - SWV  DITA & VINCE  FRIGORA (TRIO).jpg"
+    },
+    {
+        "package": "4-piece",
+        "title": "Pangako",
+        "artist": "Regine Velasquez",
+        "link": "https://www.youtube.com/embed/zEuhd250ZBY",
+        "thumbnail_file": "Pangako - Regine Velasquez  BURN  FRIGORA (4 PIECE ACOUSTIC).jpg"
+    },
+    {
+        "package": "4-piece",
+        "title": "Dream A Little Dream Of Me",
+        "artist": "Ella Fitzgerald",
+        "link": "https://www.youtube.com/embed/TdoqTp9iXC0 ",
+        "thumbnail_file": "Dream A Little Dream of Me - Kina Granis, Ella Fitzgerald  DITA  FRIGORA (4 Piece).jpg"
+    },
+    {
+        "package": "4-piece",
+        "title": "La Vie En Rose",
+        "artist": "Andrea Bocelli",
+        "link": "https://www.youtube.com/embed/77wzlLWSxhw",
+        "thumbnail_file": "First Dance La Vie En Rose - Andrea Bocelli  Esteffi & Vince  Frigora Acoustic (4 piece).jpg"
+    },
+    {
+        "package": "4-piece",
+        "title": "Dance Monkey",
+        "artist": "Tones and I",
+        "link": "https://www.youtube.com/embed/uk8HX7Y6HIA",
+        "thumbnail_file": "Dance Monkey - Tones and I  Burn  Frigora Acoustic (4PC Semi Full Band).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Somewhere Only We Know",
+        "artist": "Keane",
+        "link": "https://www.youtube.com/embed/OQLz9VqlyNk",
+        "thumbnail_file": "Somewhere Only We Know - Keane  DITA  FRIGORA (ACOUSTIC FULL BAND).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Manila Sound Medley",
+        "artist": "",
+        "link": "https://www.youtube.com/embed/8bBKGdpn90g ",
+        "thumbnail_file": "Manila Sound Medley - JM & BURN  Frigora Acoustic (Full Band).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Natural Woman",
+        "artist": "Aretha Franklin",
+        "link": "https://www.youtube.com/embed/qdFY8HesJHs ",
+        "thumbnail_file": "Inspired Beginnings 2022 Natural Woman - Aretha Franklin  BURN  Frigora Acoustic (Jazz Ensemble).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Ignition",
+        "artist": "R. Kelly",
+        "link": "https://www.youtube.com/embed/y11PKR2KTfQ ",
+        "thumbnail_file": "Ignition - R. Kelly  JM  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "September",
+        "artist": "Scary Pockets",
+        "link": "https://www.youtube.com/embed/HfTSpwe1_7U ",
+        "thumbnail_file": "September - Scary Pockets  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Love Story",
+        "artist": "Taylor Swift",
+        "link": "https://www.youtube.com/embed/kT6XSdByNLc ",
+        "thumbnail_file": "Love Story - Taylor Swift  DITA  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "5-piece",
+        "title": "Pangrap Ko Ang Ibigin Ka",
+        "artist": "Gloria Gaynor",
+        "link": "https://www.youtube.com/embed/5OmuBO_jeH0 ",
+        "thumbnail_file": "Pangarap ko Ang Ibigin Ka - Regine Velasquez  ESTEFFI  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "6-piece",
+        "title": "Mayonaka No Door (Stay With Me)",
+        "artist": "Miki Matsubara",
+        "link": "https://www.youtube.com/embed/Evxkr5PjrtQ",
+        "thumbnail_file": "Mayonaka No Door (Stay With Me) - Miki Matsubara  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "6-piece",
+        "title": "Sweet Caroline",
+        "artist": "Neil Diamond",
+        "link": "https://www.youtube.com/embed/xEUMe4pBtog",
+        "thumbnail_file": "Sweet Caroline - Neil Diamond  JM  FRIGORA (JAZZ ENSEMBLE).jpg"
+    },
+    {
+        "package": "6-piece",
+        "title": "Best Of My Love",
+        "artist": "The Emotions",
+        "link": "https://www.youtube.com/embed/ls-E9QH-qSY",
+        "thumbnail_file": "Best of My Love - The Emotions  Burn  Frigora Acoustic (Full Band).jpg"
+    },
+    {
+        "package": "6-piece",
+        "title": "Together Again",
+        "artist": "Janet Jackson",
+        "link": "https://www.youtube.com/embed/XWbgPTqo0bA ",
+        "thumbnail_file": "Together Again - Janet Jackson  Esteffi  Frigora Acoustic (Full Band).jpg"
+    },
+    {
+        "package": "6-piece",
+        "title": "Two Less Lonely People In The World",
+        "artist": "KZ Tandingan",
+        "link": "https://www.youtube.com/embed/EYaIXXAwqbQ",
+        "thumbnail_file": "Two Less Lonely People In The World - KZ Tandingan  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "7-piece",
+        "title": "I Will Survive x Queen Of The Night",
+        "artist": "Gloria Gaynor, Whitney Houston",
+        "link": "https://www.youtube.com/embed/77r00reIwFc",
+        "thumbnail_file": "I Will Survive x Queen of the Night, ARIA  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "7-piece",
+        "title": "I Finally Found Someone",
+        "artist": "Bryand Adams",
+        "link": "https://www.youtube.com/embed/Vw7nUhey3sw",
+        "thumbnail_file": "I Finally Found Someone - Bryan Adams  VINCE & BURN  FRIGORA (7PC Full Band).jpg"
+    },
+    {
+        "package": "7-piece",
+        "title": "More Than A Woman",
+        "artist": "Bee Gees",
+        "link": "https://www.youtube.com/embed/tHIGT3zSrzA ",
+        "thumbnail_file": "More Than A Woman - Bee Gees  VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "8-piece",
+        "title": "Don’t Go Yet",
+        "artist": "Camila Cabello",
+        "link": "https://www.youtube.com/embed/H58ixQxnN70",
+        "thumbnail_file": "Don't Go Yet - Camila Cabello  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "8-piece",
+        "title": "Waiting In Vain",
+        "artist": "Bob Marley",
+        "link": "https://www.youtube.com/embed/13q1FzuIxbM ",
+        "thumbnail_file": "Waiting In Vain - Bob Marley  VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "8-piece",
+        "title": "Best Part",
+        "artist": "Daniel Ceasar",
+        "link": "https://www.youtube.com/embed/AOFhTciudCA",
+        "thumbnail_file": "Best Part - Daniel Caesar & H.E.R  BURN & VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "8-piece",
+        "title": "Can’t Take My Eyes Off You",
+        "artist": "Franki Valli",
+        "link": "https://www.youtube.com/embed/hBX6QPZ1YOo",
+        "thumbnail_file": "Can't Take My Eyes Off You - Franki Valli  BURN & VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "8-piece",
+        "title": "Mas Que Nada",
+        "artist": "Sitti",
+        "link": "https://www.youtube.com/embed/pVYdm9PCTGQ ",
+        "thumbnail_file": "Mas Que Nada - Sitti  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "9-piece",
+        "title": "Treasure",
+        "artist": "Bruno Mars",
+        "link": "https://www.youtube.com/embed/lKK1_YZ_tHk ",
+        "thumbnail_file": "Treasure - Bruno Mars  VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "9-piece",
+        "title": "Love On Top (6x higher)",
+        "artist": "Beyonce",
+        "link": "https://www.youtube.com/embed/PJ0O9NCXI2E",
+        "thumbnail_file": "Love on Top (6x higher) - Beyonce  BURN  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "9-piece",
+        "title": "KLWKN",
+        "artist": "Music Hero",
+        "link": "https://www.youtube.com/embed/G-WcA8DEeA4",
+        "thumbnail_file": "KLWKN - Music Hero  BURN & VINCE  FRIGORA (FULL BAND).jpg"
+    },
+    {
+        "package": "9-piece",
+        "title": "Just The Two Of Us",
+        "artist": "Bill Withers",
+        "link": "https://www.youtube.com/embed/EnnJFyRav6k ",
+        "thumbnail_file": "Just The Two of Us - Bill Withers  VINCE  FRIGORA (FULL BAND).jpg"
+    }
+]

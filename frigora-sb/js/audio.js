@@ -21,17 +21,30 @@ let songIndex = 0;
 // // Initially load song details into DOM
 // loadSong(songs[songIndex]);
 
+function resetIndex(){
+	songIndex = 0;
+}
+
 function initSongs (selectedDir, selectedSongs){
-	songs = selectedSongs;
 	dir = selectedDir;
+	songs = selectedSongs;
 	loadSong(songs[songIndex]);
 }
 // Update song details
 function loadSong(song) {
-  title.innerText = song;
-  audio.src = `/frigora-sb/assets/songs/audio/${dir}/${song}.mp3`;
-  cover.src = '/frigora-sb/assets/songs/img/logo.png';
-  songIndex = songs.indexOf(song);
+	if (typeof song === "object") {
+		title.innerText = song.title + " - " + song.artist;
+		audio.src = `/frigora-sb/assets/songs/audio/${dir}/${song.file}`;
+		cover.src = '/frigora-sb/assets/songs/img/logo.png';
+		songIndex = songs.map(_song=>_song.title).indexOf(song.title);
+	}
+	else {
+		title.innerText = song;
+		audio.src = `/frigora-sb/assets/songs/audio/${dir}/${song}.mp3`;
+		cover.src = '/frigora-sb/assets/songs/img/logo.png';
+		songIndex = songs.indexOf(song);
+	}
+	
 }
 
 // Play song

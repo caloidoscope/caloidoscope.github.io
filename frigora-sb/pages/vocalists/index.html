@@ -40,87 +40,10 @@
     <!-- Samples -->
     <section class="page-section no-pad-bottom">
         <div class="container text-center my-3 mw-100 no-pad">
-            <h1>VOCALISTS</h1>
+            <h1 class="my-2">VOCALISTS</h1>
             <div class="row mx-auto my-auto justify-content-center">
                 <div id="recipeCarousel" class="carousel slide no-pad" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/ESTEFFI.jpg" onclick="onClickVocals('esteffi')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/BURN.jpg" onclick="onClickVocals('burn')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/DITA.jpg" onclick="onClickVocals('dita')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/JM.jpg" onclick="onClickVocals('jm')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/VINCE.jpg" onclick="onClickVocals('vince')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">                                        
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/SAM.jpg" onclick="onClickVocals('sam')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card no-border">
-                                    <div class="card-img">
-                                        <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/REMUZ.jpg" onclick="onClickVocals('remuz')" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="carousel-container" class="carousel-inner">
                     </div>
                     <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -164,7 +87,7 @@
                                 <!-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
                                 <div class ="row text-center">
                                     <div class ="col-md-4">
-                                        <img id="vocalist-pic" class="img-fluid d-block mx-auto" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
+                                        <img id="vocalist-pic" class="img-fluid d-block mx-auto rounded-9 shadow-lg" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
                                     </div>
                                     <div class ="col-md-8">
                                         <div class="music-container" id="music-container">
@@ -196,10 +119,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button> -->
                             </div>
                         </div>
                     </div>
@@ -210,108 +129,76 @@
     
     <script src="../../js/audio.js"></script>
     <script>
-        let items = document.querySelectorAll('.carousel .carousel-item')
-        items.forEach((el) => {
-            const minPerSlide = 7
-            let next = el.nextElementSibling
-            for (var i=1; i<minPerSlide; i++) {
-                if (!next) {
-                    // wrap carousel by using first child
-                    next = items[0]
-                }
-                let cloneChild = next.cloneNode(true)
-                el.appendChild(cloneChild.children[0])
-                next = next.nextElementSibling
-            }
-        })
+        onLoad();
+        function onLoad(){
+            fetch('../../assets/json/vocalists.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    let result = ""
+                    for (var i = 0; i < data.length; i++) {
+                        const classNames = "carousel-item" + (i===0 ? " active" : "");
+                        result = result +   `
+                        <div class="${classNames}">
+                            <div class="col-md-3">
+                                <div class="card no-border">
+                                    <div class="card-img">
+                                        <a data-bs-toggle="modal" href="#portfolioModal">
+                                            <img src="../../assets/img/vocalists/${data[i].name}.jpg" onclick="onClickVocals('${data[i].name}')" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    }
+                    document.getElementById('carousel-container').innerHTML = result
+                })
+                .catch(error => console.error(error))
+                .finally(()=>{
+                    let items = document.querySelectorAll('.carousel .carousel-item')
+                    items.forEach((el) => {
+                        const minPerSlide = 7
+                        let next = el.nextElementSibling
+                        for (var i=1; i<minPerSlide; i++) {
+                            if (!next) {
+                                // wrap carousel by using first child
+                                next = items[0]
+                            }
+                            let cloneChild = next.cloneNode(true)
+                            el.appendChild(cloneChild.children[0])
+                            next = next.nextElementSibling
+                        }
+                    })
+                });
+        }
 
         function onClickVocals(vocalist){
-            changeModalDetails(vocalist)
-            let selectedSongs = null
-            switch(vocalist) {
-                case 'esteffi':
-                    selectedSongs = ["Runaway - The Corrs",
-                        "Weak - SWV",
-                        "Araw Araw - Ben&Ben",
-                        "As If It's Your Last - BLACK PINK",
-                        "From This Moment - Shania Twain",
-                        "Girl From Ipanema - Sitti, Frank Sinatra",
-                        "Pangako - Regine Velasquez"]
-                    break
-                case 'burn':
-                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
-                        "Araw Gabi - Regine Velasquez",
-                        "Let It Go (Frozen) - Idina Menzel",
-                        "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
-                        "Havana - Camila Cabello",
-                        "Orange Colored Sky - Natalie Cole",
-                        "Bawat Daan - Ebe Dancel"]
-                    break
-                case 'dita':
-                    selectedSongs = ["Yellow - Coldplay",
-                        "Dream A Little Dream of Me - Doris Day",
-                        "Gravity - Sara Bareilles",
-                        "I Wanna Dance With Somebody - Whitney Houston",
-                        "Iris - Stories, Goo Goo Dolls",
-                        "Kahit Maputi Na Ang Buhok Ko - Moira Dela Torre",
-                        "Something I Need - Moira Dela Torre, One Republic"]
-                    break
-                case 'jm':
-                    selectedSongs = ["Locked Out of Heaven - Bruno Mars",
-                        "Mambo No. 5 - Lou Bega",
-                        "Manila Sound Medley",
-                        "Gravity - John Mayer",
-                        "Ikaw at Ako - Johnoy Danao",
-                        "I'll Be Over You - Toto",
-                        "Kahit Maputi Na Ang Buhok Ko - Rey Valera"]
-                    break
-                case 'vince':
-                    selectedSongs = ["Tagpuan - Moira Dela Torre, Erik Santos",
-                        "The Way You Make Me Feel - Michael Jackson",
-                        "Kahit Kailan - South Border  VINCE  FRIGORA (5 Piece Acoustic Band)",
-                        "Love Will Keep Us Alive - Eagles",
-                        "Pagtingin - Ben & Ben",
-                        "Pangarap ko Ang Ibigin Ka - Regine Velasquez"]
-                    break
-                case 'sam':
-                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
-                        "Araw Gabi - Regine Velasquez",
-                        "Let It Go (Frozen) - Idina Menzel",
-                        "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
-                        "Havana - Camila Cabello",
-                        "Orange Colored Sky - Natalie Cole",
-                        "Bawat Daan - Ebe Dancel"]
-                    break
-                case 'remuz':
-                    selectedSongs = ["Let's Groove - Earth, Wind, Fire",
-                        "Peaches - Justin Bieber",
-                        "The Way You Look Tonight - Michael Buble",
-                        "Weak - SWV",
-                        "First Dance Sweetheart - Thomas Rhett",
-                        "If I Ain't Got You x Gravity (Alicia Keys & John Mayer)"]
-                    break
-                default:
-                    selectedSongs = ["Ay Ay Ay Pag ibig - Pilita Corrales",
-                            "Araw Gabi - Regine Velasquez",
-                            "Let It Go (Frozen) - Idina Menzel",
-                            "Kay Ganda ng Ating Musika - Hajji Alejandro, Sarah Geronimo",
-                            "Havana - Camila Cabello",
-                            "Orange Colored Sky - Natalie Cole",
-                            "Bawat Daan - Ebe Dancel"]
-            }
-            initSongs(vocalist,selectedSongs);
-            var result = ""
-            for (var i = 0; i < selectedSongs.length; i++) {
-                var classNames = "song-item " + (i==0 ? "song-active" : "");
-                result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${selectedSongs[i]}",${i});'>${selectedSongs[i]}</h6>`;
-            }
-            document.getElementById('song-list').innerHTML = result
+            changeModalDetails(vocalist);
+            fetch('../../assets/json/vocalists_songs.json')
+                .then(response => response.json())
+                .then(_data => {
+                    const data=_data.filter(item => item.vocalist === vocalist);
+                    initSongs(vocalist,data);
+                    var result = ""
+                    for (var i = 0; i < data.length; i++) {                        
+                        const title = data[i].title + " - " + data[i].artist
+                        const classNames = "song-item " + (i==0 ? "song-active" : "");
+                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'>${title}</h6>`;
+                    }
+                    document.getElementById('song-list').innerHTML = result 
+                })
+                .then(()=>playSong())
+                .catch(error => console.error(error));
+            
         }
 
         function onClickClose(){
             pauseSong()
+            resetIndex()
         }
         function onClickSong(song,index){
+            console.log(song)
+            song = JSON.parse(unescape(song))
             loadSong(song)
             playSong()
         }
@@ -334,6 +221,6 @@
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
 </body>
 </html>

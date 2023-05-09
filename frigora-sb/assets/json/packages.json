@@ -1,0 +1,42 @@
+[
+    {
+      "name": "jazz",
+      "friendlyname": "Jazz"
+    },
+    {
+      "name": "solo",
+      "friendlyname": "Solo"
+    },
+    {
+      "name": "duo",
+      "friendlyname": "Duo"
+    },
+    {
+      "name": "trio",
+      "friendlyname": "Trio"
+    },
+    {
+      "name": "4-piece",
+      "friendlyname": "4-Piece"
+    },
+    {
+      "name": "5-piece",
+      "friendlyname": "5-Piece"
+    },
+    {
+      "name": "6-piece",
+      "friendlyname": "6-Piece"
+    },
+    {
+      "name": "7-piece",
+      "friendlyname": "7-Piece"
+    },
+    {
+      "name": "8-piece",
+      "friendlyname": "8-Piece"
+    },
+    {
+      "name": "9-piece",
+      "friendlyname": "9-Piece"
+    }
+   ]

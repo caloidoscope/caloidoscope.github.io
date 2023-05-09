@@ -8,8 +8,8 @@
 // 
 function changeVideo (src) {
     $(".video-container iframe").remove();
-    $('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>')
-        .attr("src", "https://www.youtube.com/embed/" + src)
+    $('<iframe width="420" height="315" frameborder="0" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>')
+        .attr("src", (src.indexOf("https://www.youtube.com/embed/")>-1? "" : "https://www.youtube.com/embed/")+src+ "?autoplay=1")
         .appendTo(".video-container");        
     $("html, body").animate({ scrollTop: 0 }, "slow");
 }
