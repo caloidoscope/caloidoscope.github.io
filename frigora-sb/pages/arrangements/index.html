@@ -41,7 +41,7 @@
     <section class="page-section no-pad-bottom">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-12">
+                <div class="col-md-12 my-5">
                     <h1>FRIGORA VERSIONS AND SONG ARRANGEMENTS</h1>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="col-md-2">
                     
                 </div>
-                <div id = "song-list" class="col-md-5 text-start">
+                <div id = "song-list" class="card p-1 shadow-lg col-md-5 text-start">
                     
                 </div>
             </div>
@@ -151,7 +151,7 @@
                     for (var i = 0; i < data.length; i++) {
                         const title = data[i].title + " - " + data[i].artist
                         var classNames = "song-item " + (i==0 ? "song-active" : "");
-                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'>${title}</h6>`;
+                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
                     }
                     document.getElementById('song-list').innerHTML = result
                     

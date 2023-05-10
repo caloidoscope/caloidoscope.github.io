@@ -71,8 +71,8 @@
     </section>
 
 
-    <div class="portfolio-modal modal modal-lg fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="portfolio-modal modal  fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class=" modal-dialog modal-xl mx-auto">
             <div class="modal-content">
                 <div class="close-modal" data-bs-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" onclick="onClickClose()"/></div>
                 <div class="container">
@@ -87,7 +87,7 @@
                                         <img id="vocalist-pic" class="img-fluid d-block mx-auto rounded-9 shadow-lg" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
                                     </div>
                                     <div class ="col-md-8">
-                                        <div class="music-container" id="music-container">
+                                        <div class="music-container mb-5" id="music-container">
                                             <div class="music-info">
                                                 <h6 id="title"></h6>
                                                 <div class="progress-container" id="progress-container">
@@ -112,7 +112,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div id = "song-list" class="text-start">
+                                        <div id = "song-list" class=" card p-1 shadow-lg text-start">
                                         </div>
                                     </div>
                                 </div>
@@ -124,6 +124,7 @@
         </div>
     </div>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="../../js/audio.js"></script>
     <script>
         onLoad();
@@ -142,6 +143,8 @@
                                     <div class="card-img">
                                         <a data-bs-toggle="modal" href="#portfolioModal">
                                             <img src="../../assets/img/vocalists/${data[i].name.toUpperCase()}.jpg" onclick="onClickVocals('${data[i].name}')" class="img-fluid">
+                                            <div class="overlay-fix">${data[i].name.toUpperCase()}</div>
+                                            <div class="overlay"><i class="fas fa-volume-up"></i> TAP/CLICK TO LISTEN</div>
                                         </a>
                                     </div>
                                 </div>
@@ -179,8 +182,10 @@
                     var result = ""
                     for (var i = 0; i < data.length; i++) {                        
                         const title = data[i].title + " - " + data[i].artist
-                        const classNames = "song-item " + (i==0 ? "song-active" : "");
-                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'>${title}</h6>`;
+                        const classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
+                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'>
+                            <i class="fas fa-play mx-1"></i>${title}
+                            </h6>`;
                     }
                     document.getElementById('song-list').innerHTML = result 
                 })
@@ -188,6 +193,11 @@
                 .catch(error => console.error(error));
             
         }
+        $(document).ready(function(){
+            $("#portfolioModal").on('hide.bs.modal', function(){
+                onClickClose();
+            });
+        });
 
         function onClickClose(){
             pauseSong()

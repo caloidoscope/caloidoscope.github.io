@@ -2,7 +2,8 @@
 
 
 .music-container {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-image: linear-gradient(to bottom, lightgray, white);
   border-radius: 15px;
   box-shadow: 0 20px 20px 0 rgba(33, 37, 41, 0.6);
   display: flex;
@@ -83,7 +84,8 @@
 }
 
 .music-info {
-  background-color: rgba(166, 166, 166, 0.5);
+  /* background-color: white; */  
+  background-image: linear-gradient(to top, rgb(229, 229, 229), white);
   border-radius: 15px 15px 0 0;
   position: absolute;
   top: 0;
@@ -106,7 +108,7 @@
 }
 
 .progress-container {
-  background: #fff;
+  background: lightgray;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
@@ -124,4 +126,16 @@
 
 .song-active{
   color:grey
+}
+
+.song-active .fa-play{
+  display:inherit !important;
+}
+
+.song-item .fa-play{
+  display:none
+}
+
+.song-list {
+  background-image: linear-gradient(to right, white, white, white,lightgray);
 }
