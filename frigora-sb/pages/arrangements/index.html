@@ -150,7 +150,7 @@
                     let result = ""
                     for (var i = 0; i < data.length; i++) {
                         const title = data[i].title + " by " + data[i].artist
-                        var classNames = "song-item " + (i==0 ? "song-active" : "");
+                        var classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
                         result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
                     }
                     document.getElementById('song-list').innerHTML = result
