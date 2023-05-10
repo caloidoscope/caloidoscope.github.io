@@ -71,7 +71,7 @@
     </section>
 
 
-    <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal modal-lg fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-bs-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" onclick="onClickClose()"/></div>
@@ -79,11 +79,9 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <!-- Project details-->
                                 <div class ="row text-center">
                                     <h2 id ="vocalist-name" class="text-uppercase">BURN</h2>
                                 </div>
-                                <!-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
                                 <div class ="row text-center">
                                     <div class ="col-md-4">
                                         <img id="vocalist-pic" class="img-fluid d-block mx-auto rounded-9 shadow-lg" src="../../assets/img/vocalists/BURN.jpg" alt="..." />
@@ -202,7 +200,7 @@
             playSong()
         }
         function changeModalDetails(vocalist){
-            const dir = '../../assets/img/vocalists/' + vocalist + '.jpg'
+            const dir = '../../assets/img/vocalists/' + vocalist.toUpperCase() + '.jpg'
             document.getElementById('vocalist-pic').src = dir
             document.getElementById('vocalist-name').innerHTML = vocalist
         }
