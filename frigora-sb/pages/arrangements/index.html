@@ -102,7 +102,7 @@
                     <div class="col-lg-12"><h4>BOOK NOW</h4>
                         <div class="row text-center">
                             <div class="col-lg-12 col-md-12 text-right">
-                                frigoraacoustic@gmail.com • +63 917 824 5081
+                                frigoracoustic@gmail.com • +63 917 824 5081
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                     initSongs(arrangement, data);
                     let result = ""
                     for (var i = 0; i < data.length; i++) {
-                        const title = data[i].title + " - " + data[i].artist
+                        const title = data[i].title + " by " + data[i].artist
                         var classNames = "song-item " + (i==0 ? "song-active" : "");
                         result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
                     }
