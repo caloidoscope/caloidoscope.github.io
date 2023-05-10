@@ -132,7 +132,7 @@
                     let result = ""
                     for (var i = 0; i < data.length; i++) {
                         if (i===0) changeVideo(data[i].link)
-                        const title = data[i].title + " - " + data[i].artist
+                        const title = data[i].title + " by " + data[i].artist
                         console.log(data[i])
                         result = result + `
                         <div class="col-lg-4 col-md-4">
