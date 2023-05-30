@@ -43,7 +43,7 @@
             </div>
         </div>
     </section>
-    <section class="page-section no-pad-bottom" id="packages">
+    <section class="page-section no-pad-bottom">
         <div class="container">
             <div class="text-center">
                 <p>Providing the perfect acoustic song arrangements for your wedding or private parties. Our acoustic teams are here to serenade you and your guests with soulful ballads to feel good music.</p>
@@ -135,8 +135,8 @@
                         const title = data[i].title + " by " + data[i].artist
                         console.log(data[i])
                         result = result + `
-                        <div class="col-lg-4 col-md-4">
-                            <img class="img-fluid shadow-lg video-thumbnail" src="../../assets/img/packages/${data[i].package}/${data[i].thumbnail_file}" onClick="changeVideo('${data[i].link}')" alt="alt"/>
+                        <div class="col-lg-4 col-md-4 py-3">
+                            <img class="img-fluid shadow-lg video-thumbnail" src="http://i3.ytimg.com/vi/${getVideoId(data[i].link)}/maxresdefault.jpg" onClick="changeVideo('${data[i].link}')" alt="alt"/>
                         </div>`;
                         console.log(result)
                     }

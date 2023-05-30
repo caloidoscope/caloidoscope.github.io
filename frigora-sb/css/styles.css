@@ -7998,6 +7998,20 @@ textarea.form-control-lg {
   visibility: hidden !important;
 }
 
+@media (max-width: 575px) {
+  .position-sm-absolute {
+    position: absolute !important;
+  }
+
+  .bottom-sm-0 {
+    bottom: 0 !important;
+  }
+
+  .vh-xs-100 {
+    /* height: 100vh !important; */
+  }
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -8565,6 +8579,10 @@ textarea.form-control-lg {
     padding-top: 3rem !important;
   }
 
+  .pt-sm-30p {
+    padding-top: 30% !important;
+  }
+
   .pe-sm-0 {
     padding-right: 0 !important;
   }
@@ -8648,6 +8666,8 @@ textarea.form-control-lg {
   .text-sm-center {
     text-align: center !important;
   }
+
+  
 }
 @media (min-width: 768px) {
   .float-md-start {
@@ -11513,11 +11533,46 @@ header.masthead .masthead-overlay .masthead-heading img{
   }
 }
 
-section#vocalists{
-  padding-top: 80vh;
-  padding-bottom: 10vh;
+@media(min-width: 768px){
+  #vocalists, 
+  #packages {
+    padding-top: 80vh !important;
+    padding-bottom: 10vh !important;
+    /* box-shadow: inset 0 0 120px #000, inset 0 0 80px #000, inset 0 0 40px #000; */
+    /* background: radial-gradient(circle, transparent 20%, black 200%); */
+  }
+  #arrangements {
+    padding-top: 75vh !important;
+    padding-bottom: 10vh !important;
+    /* box-shadow: inset 0 0 120px #000, inset 0 0 80px #000, inset 0 0 40px #000; */
+    /* background: radial-gradient(circle, transparent 20%, black 200%); */
+  }
+  .hc1{
+    background-image: url("../assets/img/header-bg.jpg") !important;
+  }
+  
+  .hc2{
+    background-image: url("../assets/img/header-bg2.jpg") !important;
+  }
+  
+  .hc3{
+    background-image: url("../assets/img/header-bg3.jpg") !important;
+  }
+  
+  .hc4{
+    background-image: url("../assets/img/header-bg4.jpg") !important;
+  }
+  
+  .hc5{
+    background-image: url("../assets/img/header-bg5.jpg") !important;
+  }
+}
+
+
+section#vocalists {
+  padding-top: 80%;
+  padding-bottom: 10%;
   text-align: center;
-  color: #fff;
   background-image: url("../assets/img/vocalists-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11528,16 +11583,23 @@ section#vocalists{
   /* background: radial-gradient(circle, transparent 20%, black 200%); */
 }
 
-/* section#vocalists:after{
-  content: '';
-  background: radial-gradient(circle, transparent 50%, black 150%);
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-} */
+section#packages {
+  padding-top: 80%;
+  padding-bottom: 10%;
+  text-align: center;
+  background-image: url("../assets/img/packages.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  /* box-shadow: inset 0 0 120px #000, inset 0 0 80px #000, inset 0 0 40px #000; */
+  /* background: radial-gradient(circle, transparent 20%, black 200%); */
+}
 
 section#arrangements{
-  padding-top: 80vh;
-  padding-bottom: 10vh;
+  padding-top: 80%;
+  padding-bottom: 10%;
   text-align: center;
   color: #fff;
   background-image: url("../assets/img/arrangements-bg.jpg");
@@ -11810,6 +11872,9 @@ h6.subheading{
   .timeline > li {
     min-height: 300px;
   }
+  .more-reviews {
+    min-height:170px !important;
+  }
   .timeline > li .timeline-panel {
     padding: 50px 50px 20px 100px;
   }
@@ -11955,25 +12020,14 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-size: cover;
 }
 
-.hc1{
-  background-image: url("../assets/img/header-bg.jpg");
-}
-
-.hc2{
-  background-image: url("../assets/img/header-bg2.jpg");
-}
-
-.hc3{
-  background-image: url("../assets/img/header-bg3.jpg");
-}
-
-.hc4{
-  background-image: url("../assets/img/header-bg4.jpg");
-}
-
+.hc1,
+.hc2,
+.hc3,
+.hc4,
 .hc5{
-  background-image: url("../assets/img/header-bg5.jpg");
+  background-image: url("../assets/img/contacts-bg-2.jpg");
 }
+
 
 .video-container { 
   position: relative;
@@ -12108,4 +12162,15 @@ a:hover .overlay {
 
 .modal-centered {
   margin: 1rem auto
+}
+
+
+.vh-xs-100 {
+  height: 100vh !important;
+}
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
+  }
 }

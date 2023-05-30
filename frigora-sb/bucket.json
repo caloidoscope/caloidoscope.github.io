@@ -1,0 +1,284 @@
+{
+    "bucket": {
+        "_id": "64623210cdd0ad0008237d8e",
+        "slug": "frigora-production",
+        "title": "Production",
+        "object_types": [
+            {
+                "title": "Packages",
+                "slug": "packages",
+                "singular": "Package",
+                "metafields": [
+                    {
+                        "children": null,
+                        "type": "text",
+                        "title": "name",
+                        "key": "name",
+                        "id": "UtloyNBBlM",
+                        "value": ""
+                    },
+                    {
+                        "children": null,
+                        "type": "text",
+                        "title": "friendly-name",
+                        "key": "friendlyname",
+                        "id": "7Y63koJhKq",
+                        "value": ""
+                    },
+                    {
+                        "children": [
+                            {
+                                "type": "repeating_item",
+                                "children": [
+                                    {
+                                        "title": "title",
+                                        "key": "title",
+                                        "value": "",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "artist",
+                                        "key": "artist",
+                                        "value": "",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "link",
+                                        "key": "link",
+                                        "value": "",
+                                        "type": "text",
+                                        "required": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "repeater",
+                        "title": "songs",
+                        "key": "songs",
+                        "id": "gP1QQFjKK4",
+                        "value": "",
+                        "repeater_fields": [
+                            {
+                                "title": "title",
+                                "key": "title",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            },
+                            {
+                                "title": "artist",
+                                "key": "artist",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            },
+                            {
+                                "title": "link",
+                                "key": "link",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            }
+                        ]
+                    }
+                ],
+                "options": {
+                    "slug_field": 1,
+                    "content_editor": 1
+                },
+                "preview_link": "",
+                "priority_locale": null,
+                "extensions": null,
+                "singleton": false,
+                "emoji": "📁",
+                "order": 0,
+                "localization": false,
+                "locales": null
+            }
+        ],
+        "objects": [
+            {
+                "_id": "64623ebb5beefc0008018260",
+                "order": 0,
+                "slug": "4-piece",
+                "title": "4-piece",
+                "content": "",
+                "metafields": [
+                    {
+                        "children": null,
+                        "type": "text",
+                        "title": "name",
+                        "key": "name",
+                        "id": "wkpMYC3eMC",
+                        "value": "4-piece"
+                    },
+                    {
+                        "children": null,
+                        "type": "text",
+                        "title": "friendly-name",
+                        "key": "friendlyname",
+                        "id": "CIthZ9bGD5",
+                        "value": "4-piece"
+                    },
+                    {
+                        "children": [
+                            {
+                                "type": "repeating_item",
+                                "children": [
+                                    {
+                                        "title": "title",
+                                        "key": "title",
+                                        "value": "Pangako",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "artist",
+                                        "key": "artist",
+                                        "value": "Regine Velasquez",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "link",
+                                        "key": "link",
+                                        "value": "zEuhd250ZBY",
+                                        "type": "text",
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "repeating_item",
+                                "children": [
+                                    {
+                                        "title": "title",
+                                        "key": "title",
+                                        "value": "Dream A Little Dream Of Me",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "artist",
+                                        "key": "artist",
+                                        "value": "Ella Fitzgerald",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "link",
+                                        "key": "link",
+                                        "value": "TdoqTp9iXC0 ",
+                                        "type": "text",
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "repeating_item",
+                                "children": [
+                                    {
+                                        "title": "title",
+                                        "key": "title",
+                                        "value": "La Vie En Rose",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "artist",
+                                        "key": "artist",
+                                        "value": "Andrea Bocelli",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "link",
+                                        "key": "link",
+                                        "value": "77wzlLWSxhw",
+                                        "type": "text",
+                                        "required": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "repeating_item",
+                                "children": [
+                                    {
+                                        "title": "title",
+                                        "key": "title",
+                                        "value": "Dance Monkey",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "artist",
+                                        "key": "artist",
+                                        "value": "Tones and I",
+                                        "type": "text",
+                                        "required": false
+                                    },
+                                    {
+                                        "title": "link",
+                                        "key": "link",
+                                        "value": "uk8HX7Y6HIA",
+                                        "type": "text",
+                                        "required": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "repeater",
+                        "title": "songs",
+                        "key": "songs",
+                        "id": "p8n53TVpcx",
+                        "value": "Pangako",
+                        "repeater_fields": [
+                            {
+                                "title": "title",
+                                "key": "title",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            },
+                            {
+                                "title": "artist",
+                                "key": "artist",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            },
+                            {
+                                "title": "link",
+                                "key": "link",
+                                "value": "",
+                                "type": "text",
+                                "required": false
+                            }
+                        ]
+                    }
+                ],
+                "bucket": "64623210cdd0ad0008237d8e",
+                "type_slug": "packages",
+                "created_at": "2023-05-15T14:16:27.717Z",
+                "created_by": "646231fecdd0ad0008237d8c",
+                "modified_at": "2023-05-15T14:56:09.554Z",
+                "created": "2023-05-15T14:16:27.717Z",
+                "user_id": "646231fecdd0ad0008237d8c",
+                "options": {
+                    "content_editor": 0,
+                    "slug_field": 1
+                },
+                "status": "published",
+                "thumbnail": "",
+                "published_at": "2023-05-15T14:56:09.554Z",
+                "modified_by": "646231fecdd0ad0008237d8c",
+                "publish_at": null,
+                "unpublish_at": null
+            }
+        ],
+        "media": [],
+        "media_folders": []
+    }
+}

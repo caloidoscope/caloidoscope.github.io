@@ -6,14 +6,26 @@
 //
 // Scripts
 // 
-function changeVideo (src) {
+function changeVideo (src, index) {
+    src = getVideoId(src);
     $(".video-container iframe").remove();
     $('<iframe width="420" height="315" frameborder="0" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>')
         .attr("src", (src.indexOf("https://www.youtube.com/embed/")>-1? "" : "https://www.youtube.com/embed/")+src+ "?autoplay=1")
         .appendTo(".video-container");        
     $("html, body").animate({ scrollTop: 0 }, "slow");
+    if (index || index>-1){
+        document.getElementsByClassName('song-active')[0].classList.remove('song-active');
+        document.getElementById('song-'+index).classList.add('song-active');
+    }
 }
-
+function getVideoId(src){
+    src = src.replace('https://youtu.be/', '');
+    src = src.replace('https://www.youtube.com/watch?v=','')
+    return src
+}
+function stopVideo(){
+    changeVideo('')
+}
 window.addEventListener('DOMContentLoaded', event => {
 
     

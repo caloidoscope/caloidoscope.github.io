@@ -52,13 +52,11 @@
     
     <section class="page-section">
         <div class="container">
-            <!-- <div class="row text-center">
-                <div class="col-md-12">
-                    <h1 style="margin-bottom:60px">FIRST DANCE</h1>
-                </div>
-            </div> -->
             <div class="row text-center">
-                <div class="col-md-5 ">
+                <div id="player-container" class="col-md-6 ">
+                    <div class="video-container d-none" id="video-container">
+                        <iframe width="1920" height="1080" src="https://www.youtube.com/embed/8bBKGdpn90g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                     <div class="music-container" id="music-container">
                         <div class="music-info">
                             <h6 id="title"></h6>
@@ -86,8 +84,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-2">
-                    
+                <div class="col-md-1">
                 </div>
                 <div id = "song-list" class="card p-1 shadow-lg col-md-5 text-start">
                     
@@ -112,13 +109,30 @@
     </section>
     
     <script src="../../js/audio.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
+        let isAudioOnly = false;
         renderSongs();
         renderNavButtons();
         function onClickSong(song,index){
-                song = JSON.parse(unescape(song))
-                loadSong(song);
-                playSong();
+            renderPlayer(song, index)
+        }
+
+        function renderPlayer(song,index){
+            song = typeof song === "string" ? JSON.parse(unescape(song)) : song
+            console.log("render")
+            console.log(song)
+                pauseSong();
+                stopVideo();
+                if(song.isAudioOnly){
+                    renderAudioPlayer()
+                    loadSong(song);
+                    playSong();
+                } else {
+                    renderVideoPlayer()
+                    changeVideo(song.link, index)
+                }
         }
 
         function renderNavButtons(){
@@ -126,7 +140,6 @@
             fetch('../../assets/json/arrangements.json')
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     let result = ""
                     for (var i = 0; i < data.length; i++) {
                         const classNames = "btn btn-outline-dark btn-md btn-block" + (data[i].name === arrangement ? " active" : "");
@@ -154,12 +167,20 @@
                         result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
                     }
                     document.getElementById('song-list').innerHTML = result
-                    
+                    return data;
                 })
-                .then(()=>playSong())
+                .then(data => renderPlayer(data[0], 0))
                 .catch(error => console.error(error));
         }
         
+        function renderAudioPlayer(){
+            document.getElementById('music-container').classList.remove('d-none');
+            document.getElementById('video-container').classList.add('d-none');
+        }
+        function renderVideoPlayer(){
+            document.getElementById('video-container').classList.remove('d-none');
+            document.getElementById('music-container').classList.add('d-none');
+        }
         
     </script>
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script> -->
