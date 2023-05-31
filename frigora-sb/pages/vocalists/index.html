@@ -142,7 +142,7 @@
                                 <div class="card no-border">
                                     <div class="card-img">
                                         <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/${data[i].name.toUpperCase()}.jpg" onclick="onClickVocals('${data[i].name}')" class="img-fluid">
+                                            <img src="../../assets/img/vocalists/${data[i].name.toLowerCase()}.jpg" onclick="onClickVocals('${data[i].name}')" class="img-fluid">
                                             <div class="overlay-fix">${data[i].name.toUpperCase()}</div>
                                             <div class="overlay"><i class="fas fa-volume-up"></i> TAP/CLICK TO LISTEN</div>
                                         </a>
@@ -210,7 +210,7 @@
             playSong()
         }
         function changeModalDetails(vocalist){
-            const dir = '../../assets/img/vocalists/' + vocalist.toUpperCase() + '.jpg'
+            const dir = '../../assets/img/vocalists/' + vocalist.toLowerCase() + '.jpg'
             document.getElementById('vocalist-pic').src = dir
             document.getElementById('vocalist-name').innerHTML = vocalist
         }
