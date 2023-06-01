@@ -45,16 +45,9 @@
     </section>
     <section class="page-section no-pad-bottom">
         <div class="container">
-            <div class="text-center">
-                <p>Providing the perfect acoustic song arrangements for your wedding or private parties. Our acoustic teams are here to serenade you and your guests with soulful ballads to feel good music.</p>
-                <div class="row text-center">
-                    <div class="col-lg-4 col-md-12">
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <a class="btn btn-outline-secondary btn-lg btn-block" href="tel:+639178245081">CLICK HERE TO HEAR MORE</a>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-12">
+                    <a class="btn btn-outline-secondary btn-lg btn-block" id="playlist-link" href="tel:+639178245081">CLICK HERE TO HEAR MORE</a>
                 </div>
             </div>
         </div>
@@ -114,10 +107,11 @@
                     for (var i = 0; i < data.length; i++) {
                         const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name === packages ? " active" : "");
                         console.log(classNames)
-                        result = result +   `<div class="col-lg-3 col-md-12">
+                        result = result +   `<div class="col-lg-3 col-6 pt-2">
                                                 <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyname.toUpperCase()}</a>
                                             </div>`;
                     }
+                    document.getElementById('playlist-link').href = data.find(d=>d.name==packages).playlistlink
                     document.getElementById('packages-nav').innerHTML = result
                     
                 })

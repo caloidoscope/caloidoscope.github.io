@@ -1,42 +1,52 @@
 [
     {
       "name": "jazz",
-      "friendlyname": "Jazz"
+      "friendlyname": "Jazz",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvEJTK9LSf3crEKNGuDaDuKF"
     },
     {
       "name": "solo",
-      "friendlyname": "Solo"
+      "friendlyname": "Solo",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvEPeNWtM84L3213qC0_WZeY"
     },
     {
       "name": "duo",
-      "friendlyname": "Duo"
+      "friendlyname": "Duo",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvGzZ6a6Euer5ZSzg8GIi8s5"
     },
     {
       "name": "trio",
-      "friendlyname": "Trio"
+      "friendlyname": "Trio",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvE9t12ngPDzUPUH5pPhrSlR"
     },
     {
       "name": "4-piece",
-      "friendlyname": "4-Piece"
+      "friendlyname": "4-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvHiDw5ZY4Y0mPI6EqL7NvZj"
     },
     {
       "name": "5-piece",
-      "friendlyname": "5-Piece"
+      "friendlyname": "5-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvHHEcKCXCp0uVovOMdlDzsv"
     },
     {
       "name": "6-piece",
-      "friendlyname": "6-Piece"
+      "friendlyname": "6-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvE_E2OGiDwKBtv6vkSjU_ZA"
     },
     {
       "name": "7-piece",
-      "friendlyname": "7-Piece"
+      "friendlyname": "7-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvG18TJ9psTRWPmRMGFcmINP"
     },
     {
       "name": "8-piece",
-      "friendlyname": "8-Piece"
+      "friendlyname": "8-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvENiu1F6sf4xtXVU7A1Ovbt"
     },
     {
       "name": "9-piece",
-      "friendlyname": "9-Piece"
+      "friendlyname": "9-Piece",
+      "playlistlink": "https://www.youtube.com/playlist?list=PLmKM4BqkWCvEjRzBK8mMQ2v_wygHVZVIo"
     }
    ]
