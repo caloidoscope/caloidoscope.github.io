@@ -9329,8 +9329,8 @@ textarea.form-control-lg {
     height: 100vh !important;
   }
 
-  .vh-md-90 {
-    height: 90vh !important;
+  .vh-md-95 {
+    height: 95vh !important;
   }
 }
 @media (min-width: 992px) {
