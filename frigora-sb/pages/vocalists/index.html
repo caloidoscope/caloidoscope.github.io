@@ -126,24 +126,27 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="../../js/audio.js"></script>
+    <script src="../../js/sanity.js"></script>
     <script>
-        onLoad();
-        function onLoad(){
-            fetch('../../assets/json/vocalists.json')
+        var _data = null;
+        renderContent()
+        function renderContent(){
+            fetch(SANITY_API_ENDPOINT)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    _data = data.result.vocalists
                     let result = ""
-                    for (var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < _data.length; i++) {
                         const classNames = "carousel-item" + (i===0 ? " active" : "");
+                        console.log(_data[i].image.url)
                         result = result +   `
                         <div class="${classNames}">
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
                                         <a data-bs-toggle="modal" href="#portfolioModal">
-                                            <img src="../../assets/img/vocalists/${data[i].name.toLowerCase()}.jpg" onclick="onClickVocals('${data[i].name}')" class="img-fluid">
-                                            <div class="overlay-fix">${data[i].name.toUpperCase()}</div>
+                                            <img src="${_data[i].image.url}" onclick="onClickVocals('${_data[i].name}')" class="img-fluid">
+                                            <div class="overlay-fix">${_data[i].name.toUpperCase()}</div>
                                             <div class="overlay"><i class="fas fa-volume-up"></i> TAP/CLICK TO LISTEN</div>
                                         </a>
                                     </div>
@@ -171,26 +174,21 @@
                     })
                 });
         }
-
         function onClickVocals(vocalist){
-            changeModalDetails(vocalist);
-            fetch('../../assets/json/vocalists_songs.json')
-                .then(response => response.json())
-                .then(_data => {
-                    const data=_data.filter(item => item.vocalist === vocalist);
-                    initSongs(vocalist,data);
-                    var result = ""
-                    for (var i = 0; i < data.length; i++) {                        
-                        const title = data[i].title + " by " + data[i].artist
-                        const classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
-                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'>
-                            <i class="fas fa-play mx-1"></i>${title}
-                            </h6>`;
-                    }
-                    document.getElementById('song-list').innerHTML = result 
-                })
-                .then(()=>playSong())
-                .catch(error => console.error(error));
+            data = _data.find(_vocalist => _vocalist.name === vocalist);
+            changeModalDetails(data);
+            var songs = data.songs
+            initSongsSanity(songs);
+            var result = ""
+            for (var i = 0; i < songs.length; i++) {                        
+                const title = songs[i].title + " by " + songs[i].artist
+                const classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
+                result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(songs[i]))}",${i});'>
+                    <i class="fas fa-play mx-1"></i>${title}
+                    </h6>`;
+            }
+            document.getElementById('song-list').innerHTML = result
+            playSong()
             
         }
         $(document).ready(function(){
@@ -204,20 +202,17 @@
             resetIndex()
         }
         function onClickSong(song,index){
-            console.log(song)
             song = JSON.parse(unescape(song))
             loadSong(song)
             playSong()
         }
         function changeModalDetails(vocalist){
-            const dir = '../../assets/img/vocalists/' + vocalist.toLowerCase() + '.jpg'
-            document.getElementById('vocalist-pic').src = dir
-            document.getElementById('vocalist-name').innerHTML = vocalist
+            document.getElementById('vocalist-pic').src = vocalist.image.url + "?q=55"
+            document.getElementById('vocalist-name').innerHTML = vocalist.name.toUpperCase()
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../../js/scripts.js"></script>
-    <script src="../../js/audio-player.js"></script>
 </body>
 </html>

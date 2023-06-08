@@ -66,7 +66,7 @@
                             <h6 id="currTime"></h6>
                         </div>
                         
-                        <audio src="" id="audio"></audio>
+                        <audio src="" id="audio" muted></audio>
                         <div class="img-container">
                             <img src="../../assets/songs/img/logo.png" alt="music-cover" id="cover" />
                         </div>
@@ -110,11 +110,24 @@
     
     <script src="../../js/audio.js"></script>
     <script src="../../js/scripts.js"></script>
+    <script src="../../js/sanity.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
         let isAudioOnly = false;
-        renderSongs();
-        renderNavButtons();
+        const _data = null;
+        renderContent();
+
+        function renderContent(){
+            fetch(SANITY_API_ENDPOINT)
+                .then(response => response.json())
+                .then(data => {
+                    let arrangements = data.result.arrangements
+                    renderNavButtons(arrangements)
+                    renderSongs(arrangements)
+                })
+                .catch(error => console.error(error));
+        }
+
         function onClickSong(song,index){
             renderPlayer(song, index)
         }
@@ -131,46 +144,36 @@
                     playSong();
                 } else {
                     renderVideoPlayer()
-                    changeVideo(song.link, index)
+                    changeVideo(song.videoUrl, index)
                 }
         }
 
-        function renderNavButtons(){
+        function renderNavButtons(data){
             let arrangement = new URL(window.location.href).searchParams.get("q")
-            fetch('../../assets/json/arrangements.json')
-                .then(response => response.json())
-                .then(data => {
-                    let result = ""
-                    for (var i = 0; i < data.length; i++) {
-                        const classNames = "btn btn-outline-dark btn-md btn-block" + (data[i].name === arrangement ? " active" : "");
-                        console.log(classNames)
-                        result = result +   `<div class="col-lg-3 col-md-12">
-                                                <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyname.toUpperCase()}</a>
-                                            </div>`;
-                    }
-                    document.getElementById('arrangements-nav').innerHTML = result
-                    
-                })
-                .catch(error => console.error(error));
+            let result = ""
+            for (var i = 0; i < data.length; i++) {
+                const classNames = "btn btn-outline-dark btn-md btn-block" + (data[i].name === arrangement ? " active" : "");
+                console.log(classNames)
+                result = result +   `<div class="col-lg-3 col-md-12">
+                                        <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
+                                    </div>`;
+            }
+            document.getElementById('arrangements-nav').innerHTML = result
         }
-        function renderSongs(){
+        function renderSongs(_data){
             let arrangement = new URL(window.location.href).searchParams.get("q")
-            fetch('../../assets/json/arrangements_songs.json')
-                .then(response => response.json())
-                .then(_data => {
-                    const data=_data.filter(item => item.arrangement === arrangement);
-                    initSongs(arrangement, data);
-                    let result = ""
-                    for (var i = 0; i < data.length; i++) {
-                        const title = data[i].title + " by " + data[i].artist
-                        var classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
-                        result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(data[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
-                    }
-                    document.getElementById('song-list').innerHTML = result
-                    return data;
-                })
-                .then(data => renderPlayer(data[0], 0))
-                .catch(error => console.error(error));
+            const data=_data.find(item => item.name === arrangement);
+            console.log(data)
+            const songs=data.songs
+            initSongsSanity(songs);
+            let result = ""
+            for (var i = 0; i < songs.length; i++) {
+                const title = songs[i].title + " by " + songs[i].artist
+                var classNames = "p-1 song-item " + (i==0 ? "song-active" : "");
+                result = result + `<h6 id="song-${i}" class="${classNames}" style='display:flex;cursor:pointer' onclick='onClickSong("${escape(JSON.stringify(songs[i]))}",${i});'><i class="fas fa-play mx-1"></i>${title}</h6>`;
+            }
+            document.getElementById('song-list').innerHTML = result
+            renderPlayer(songs[0], 0)
         }
         
         function renderAudioPlayer(){

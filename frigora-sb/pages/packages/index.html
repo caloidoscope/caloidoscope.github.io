@@ -38,17 +38,15 @@
     </nav>
     <section id="main-header" class="page-section no-pad-bottom">
         <div class="container text-center">
-            <div class="video-container">
-                <iframe width="1920" height="1080" src="https://www.youtube.com/embed/8bBKGdpn90g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-container skeleton">
+                <!-- <iframe width="1920" height="1080" src="https://www.youtube.com/embed/8bBKGdpn90g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
         </div>
     </section>
     <section class="page-section no-pad-bottom">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-4 col-12">
-                    <a class="btn btn-outline-secondary btn-lg btn-block" id="playlist-link" href="tel:+639178245081">CLICK HERE TO HEAR MORE</a>
-                </div>
+                <div class="col-md-4 col-12" id="playlist-link-container"></div>
             </div>
         </div>
     </section>
@@ -56,6 +54,24 @@
         <div class="container">
             <div class="text-center">
                 <div id="packages-song-container" class="row text-center">
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 py-3">
+                        <div class="ratio ratio-16x9 skeleton"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,12 +80,6 @@
         <div class="container">
             <div class="text-center">
                 <div id="packages-nav" class="row text-center">
-                    <div class="col-lg-6 col-md-12">
-                        <a class="btn btn-outline-secondary btn-lg btn-block" href="../acoustic-band/">ACOUSTIC BAND</a>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <a class="btn btn-outline-secondary btn-lg btn-block" href="../jazz-band/">JAZZ BAND</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -94,50 +104,59 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../../js/scripts.js"></script>
+    <script src="../../js/sanity.js"></script>
     <script>
-        renderNavButtons()
-        renderSongs()
-        function renderNavButtons(){
-            let packages = new URL(window.location.href).searchParams.get("q")
-            fetch('../../assets/json/packages.json')
+        renderContent()
+        const currentPackage = new URL(window.location.href).searchParams.get("q")
+        function renderContent(){
+            fetch(SANITY_API_ENDPOINT)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    let result = ""
-                    for (var i = 0; i < data.length; i++) {
-                        const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name === packages ? " active" : "");
-                        console.log(classNames)
-                        result = result +   `<div class="col-lg-3 col-6 pt-2">
-                                                <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyname.toUpperCase()}</a>
-                                            </div>`;
-                    }
-                    document.getElementById('playlist-link').href = data.find(d=>d.name==packages).playlistlink
-                    document.getElementById('packages-nav').innerHTML = result
-                    
+                    renderNavButtons(data)
+                    renderSongs(data)
+                    renderMoreButton(data)
                 })
                 .catch(error => console.error(error));
         }
-        function renderSongs(){
-            let packages = new URL(window.location.href).searchParams.get("q")
-            fetch('../../assets/json/packages_songs.json')
-                .then(response => response.json())
-                .then(_data => {
-                    const data=_data.filter(item => item.package === packages);
-                    let result = ""
-                    for (var i = 0; i < data.length; i++) {
-                        if (i===0) changeVideo(data[i].link)
-                        const title = data[i].title + " by " + data[i].artist
-                        console.log(data[i])
-                        result = result + `
-                        <div class="col-lg-4 col-md-4 py-3">
-                            <img class="img-fluid shadow-lg video-thumbnail" src="http://i3.ytimg.com/vi/${getVideoId(data[i].link)}/maxresdefault.jpg" onClick="changeVideo('${data[i].link}')" alt="alt"/>
-                        </div>`;
-                        console.log(result)
-                    }
-                    document.getElementById('packages-song-container').innerHTML = result
-                    
-                })
-                .catch(error => console.error(error));
+        function renderNavButtons(data){
+            var result = ""
+            data = getPackages(data)
+            for (var i = 0; i < data.length; i++) {
+                const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name === currentPackage ? " active" : "");
+                console.log(classNames)
+                result = result +   `<div class="col-lg-3 col-6 pt-2">
+                                        <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
+                                    </div>`;
+            }
+            document.getElementById('packages-nav').innerHTML = result
+        }
+        function renderSongs(data){
+            data = getSongs(data)
+            let result = ""
+            for (var i = 0; i < data.length; i++) {
+                if (i===0) changeVideo(data[i].link)
+                const title = data[i].title + " by " + data[i].artist
+                console.log(data[i])
+                result = result + `
+                <div class="col-lg-4 col-md-4 py-3">
+                    <img class="img-fluid shadow-lg video-thumbnail" src="http://i3.ytimg.com/vi/${getVideoId(data[i].link)}/maxresdefault.jpg" onClick="changeVideo('${data[i].link}')" alt="alt"/>
+                </div>`;
+                console.log(result)
+            }
+            document.getElementById('packages-song-container').innerHTML = result
+        }
+        function renderMoreButton(data){
+            var result = ""
+            data = getPackages(data)
+            var playlistLink = data.find(n=>n.name==currentPackage).playlistLink
+            document.getElementById('playlist-link-container').innerHTML = `<a target="_blank" class="btn btn-outline-secondary btn-lg btn-block" id="playlist-link" href="${playlistLink}">CLICK HERE TO HEAR MORE</a>`
+        }
+        function getSongs(data){
+            return data.result.packages.find(n=>n.name==currentPackage).songs
+        }
+        function getPackages(data){
+            return data.result.packages.map(n=>{return {"name": n.name, "friendlyName": n.friendlyName, "playlistLink": n.playlistLink}})
         }
     </script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->

@@ -17,6 +17,7 @@ let dir = "";
 
 // Keep rtack of song
 let songIndex = 0;
+let isSanity = false;
 
 // // Initially load song details into DOM
 // loadSong(songs[songIndex]);
@@ -30,21 +31,34 @@ function initSongs (selectedDir, selectedSongs){
 	songs = selectedSongs;
 	loadSong(songs[songIndex]);
 }
+
+function initSongsSanity(_songs){
+	songs = _songs;
+	isSanity = true
+	loadSong(songs[songIndex]);
+}
 // Update song details
 function loadSong(song) {
-	if (typeof song === "object") {
+	if (isSanity){
 		title.innerText = song.title + " - " + song.artist;
-		audio.src = `../../assets/songs/audio/${dir}/${song.file}`;
+		audio.src = song.url;
 		cover.src = '../../assets/songs/img/logo.png';
 		songIndex = songs.map(_song=>_song.title).indexOf(song.title);
 	}
 	else {
-		title.innerText = song;
-		audio.src = `../../assets/songs/audio/${dir}/${song}.mp3`;
-		cover.src = '../../assets/songs/img/logo.png';
-		songIndex = songs.indexOf(song);
+		if (typeof song === "object") {
+			title.innerText = song.title + " - " + song.artist;
+			audio.src = `../../assets/songs/audio/${dir}/${song.file}`;
+			cover.src = '../../assets/songs/img/logo.png';
+			songIndex = songs.map(_song=>_song.title).indexOf(song.title);
+		}
+		else {
+			title.innerText = song;
+			audio.src = `../../assets/songs/audio/${dir}/${song}.mp3`;
+			cover.src = '../../assets/songs/img/logo.png';
+			songIndex = songs.indexOf(song);
+		}
 	}
-	
 }
 
 // Play song
@@ -53,6 +67,7 @@ function playSong() {
   playBtn.querySelector('svg.ap').classList.remove('fa-play');
   playBtn.querySelector('svg.ap').classList.add('fa-pause');
   audio.play();
+  audio.muted = false;
   document.getElementsByClassName('song-active')[0].classList.remove('song-active');
   document.getElementById('song-'+songIndex).classList.add('song-active');
 }
