@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>FRIGORA - Home</title>
+    <title>FRIGORA - Arrangements - </title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./../../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -152,6 +152,10 @@
             let arrangement = new URL(window.location.href).searchParams.get("q")
             let result = ""
             for (var i = 0; i < data.length; i++) {
+                if (data[i].name == arrangement) {
+                    document.title = document.title + data[i].friendlyName
+                    console.log(document.title)
+                }
                 const classNames = "btn btn-outline-dark btn-md btn-block" + (data[i].name === arrangement ? " active" : "");
                 console.log(classNames)
                 result = result +   `<div class="col-lg-3 col-md-12">

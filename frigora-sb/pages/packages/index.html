@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>FRIGORA - Home</title>
+    <title>FRIGORA - Packages - </title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./../../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -123,7 +123,10 @@
             var result = ""
             data = getPackages(data)
             for (var i = 0; i < data.length; i++) {
-                const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name === currentPackage ? " active" : "");
+                if (data[i].name == currentPackage) {
+                    document.title = document.title + data[i].friendlyName
+                }
+                const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name == currentPackage ? " active" : "");
                 console.log(classNames)
                 result = result +   `<div class="col-lg-3 col-6 pt-2">
                                         <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
