@@ -27,11 +27,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../../#packages">Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../#vocalists">Vocalists</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../#arrangements">Arrangements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../#team">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../packages/?q=jazz">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../testimonials/">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../vocalists/">Vocalists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../arrangements/?q=bridal-march">Arrangements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../events/?q=weddings">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../team/">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -124,12 +125,12 @@
             data = getPackages(data)
             for (var i = 0; i < data.length; i++) {
                 if (data[i].name == currentPackage) {
-                    document.title = document.title + data[i].friendlyName
+                    document.title = document.title + " " + data[i].friendlyName
                 }
                 const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name == currentPackage ? " active" : "");
                 console.log(classNames)
                 result = result +   `<div class="col-lg-3 col-6 pt-2">
-                                        <a class="${classNames}" href="index.html?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
+                                        <a class="${classNames}" href="?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
                                     </div>`;
             }
             document.getElementById('packages-nav').innerHTML = result
@@ -162,10 +163,5 @@
             return data.result.packages.map(n=>{return {"name": n.name, "friendlyName": n.friendlyName, "playlistLink": n.playlistLink}})
         }
     </script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
 </body>
 </html>

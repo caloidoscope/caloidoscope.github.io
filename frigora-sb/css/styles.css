@@ -11602,6 +11602,17 @@ section#arrangements{
   position: relative;
 }
 
+section#events{
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/events-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
 #contacts-bg{
   text-align: center;
   color: #fff;
@@ -12176,4 +12187,16 @@ a:hover .overlay {
   100% {
     background-color: hsl(200, 20%, 95%);
   }
+}
+
+.fill-cntr > .img-fluid { 
+  min-height:100%; 
+  min-width: 100%; 
+  object-fit: cover; 
+}
+
+.fill-cntr-contain > .img-fluid { 
+  min-height:100%; 
+  min-width: 100%; 
+  object-fit: contain; 
 }
