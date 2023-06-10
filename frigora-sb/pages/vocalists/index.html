@@ -9,13 +9,6 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="./../../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../../css/styles.css" rel="stylesheet" />
-    <link href="../../css/audio.css" rel="stylesheet" />
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -126,8 +119,7 @@
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="../../js/audio.js"></script>
-    <script src="../../js/sanity.js"></script>
+    <script src="../../js/scripts-min.js"></script>
     <script>
         var _data = null;
         renderContent()
@@ -139,14 +131,14 @@
                     let result = ""
                     for (var i = 0; i < _data.length; i++) {
                         const classNames = "carousel-item" + (i===0 ? " active" : "");
-                        console.log(_data[i].image.url)
+                        
                         result = result +   `
                         <div class="${classNames}">
                             <div class="col-md-3">
                                 <div class="card no-border">
                                     <div class="card-img">
                                         <a data-bs-toggle="modal" href="#portfolioModal" onclick="onClickVocals('${_data[i].name}')">
-                                            <img src="${_data[i].image.url}" class="img-fluid">
+                                            <img src="${_data[i].image.url}?fm=webp" class="img-fluid">
                                             <div class="overlay-fix">${_data[i].name.toUpperCase()}</div>
                                             <div class="overlay"><i class="fas fa-volume-up"></i> TAP/CLICK TO LISTEN</div>
                                         </a>
@@ -213,7 +205,13 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../css/styles-min.css" rel="stylesheet" />
+    <link href="../../css/audio.css" rel="stylesheet" />
     <!-- Core theme JS-->
-    <script src="../../js/scripts.js"></script>
 </body>
 </html>

@@ -8,13 +8,6 @@
     <title>FRIGORA - Packages - </title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="./../../assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../../css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -104,8 +97,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="../../js/scripts.js"></script>
-    <script src="../../js/sanity.js"></script>
+    <script src="../../js/scripts-min.js"></script>
     <script>
         renderContent()
         const currentPackage = new URL(window.location.href).searchParams.get("q")
@@ -113,7 +105,7 @@
             fetch(SANITY_API_ENDPOINT)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    
                     renderNavButtons(data)
                     renderSongs(data)
                     renderMoreButton(data)
@@ -128,7 +120,7 @@
                     document.title = document.title + " " + data[i].friendlyName
                 }
                 const classNames = " btn btn-outline-dark btn-md btn-block" + (data[i].name == currentPackage ? " active" : "");
-                console.log(classNames)
+                
                 result = result +   `<div class="col-lg-3 col-6 pt-2">
                                         <a class="${classNames}" href="?q=${data[i].name}">${data[i].friendlyName.toUpperCase()}</a>
                                     </div>`;
@@ -141,12 +133,12 @@
             for (var i = 0; i < data.length; i++) {
                 if (i===0) changeVideo(data[i].link)
                 const title = data[i].title + " by " + data[i].artist
-                console.log(data[i])
+                
                 result = result + `
                 <div class="col-lg-4 col-md-4 py-3">
-                    <img class="img-fluid shadow-lg video-thumbnail" src="http://i3.ytimg.com/vi/${getVideoId(data[i].link)}/maxresdefault.webp" onClick="changeVideo('${data[i].link}')" alt="alt"/>
+                    <img class="img-fluid shadow-lg video-thumbnail" src="http://i3.ytimg.com/vi/${getVideoId(data[i].link)}/maxresdefault.jpg" onClick="changeVideo('${data[i].link}')" alt="alt"/>
                 </div>`;
-                console.log(result)
+                
             }
             document.getElementById('packages-song-container').innerHTML = result
         }
@@ -163,5 +155,12 @@
             return data.result.packages.map(n=>{return {"name": n.name, "friendlyName": n.friendlyName, "playlistLink": n.playlistLink}})
         }
     </script>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../css/styles-min.css" rel="stylesheet" />
 </body>
 </html>
