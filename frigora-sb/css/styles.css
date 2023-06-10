@@ -11491,7 +11491,7 @@ p {
 header.masthead {
   text-align: center;
   color: #fff;
-  /* background-image: url("../assets/img/header-bg.jpg"); */
+  /* background-image: url("../assets/img/header-bg.webp"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11548,30 +11548,30 @@ header.masthead .masthead-overlay .masthead-heading img{
 
 @media(min-width: 768px){
   .hc1{
-    background-image: url("../assets/img/header-bg.jpg") !important;
+    background-image: url("../assets/img/header-bg.webp") !important;
   }
   
   .hc2{
-    background-image: url("../assets/img/header-bg2.jpg") !important;
+    background-image: url("../assets/img/header-bg2.webp") !important;
   }
   
   .hc3{
-    background-image: url("../assets/img/header-bg3.jpg") !important;
+    background-image: url("../assets/img/header-bg3.webp") !important;
   }
   
   .hc4{
-    background-image: url("../assets/img/header-bg4.jpg") !important;
+    background-image: url("../assets/img/header-bg4.webp") !important;
   }
   
   .hc5{
-    background-image: url("../assets/img/header-bg5.jpg") !important;
+    background-image: url("../assets/img/header-bg5.webp") !important;
   }
 }
 
 
 section#vocalists {
   text-align: center;
-  background-image: url("../assets/img/vocalists-bg.jpg");
+  background-image: url("../assets/img/vocalists-bg.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11583,7 +11583,7 @@ section#vocalists {
 
 section#packages {
   text-align: center;
-  background-image: url("../assets/img/packages.jpg");
+  background-image: url("../assets/img/packages.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11594,7 +11594,7 @@ section#packages {
 section#arrangements{
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/arrangements-bg.jpg");
+  background-image: url("../assets/img/arrangements-bg.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11605,7 +11605,7 @@ section#arrangements{
 section#events{
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/events-bg.jpg");
+  background-image: url("../assets/img/events-bg.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11616,7 +11616,7 @@ section#events{
 #contacts-bg{
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/contacts-bg.jpg");
+  background-image: url("../assets/img/contacts-bg.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -12026,7 +12026,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .hc3,
 .hc4,
 .hc5{
-  background-image: url("../assets/img/contacts-bg-2.jpg");
+  background-image: url("../assets/img/contacts-bg-2.webp");
 }
 
 
