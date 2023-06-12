@@ -11602,6 +11602,17 @@ section#arrangements{
   position: relative;
 }
 
+section#team-page-header{
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/header-bg4.webp");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
 section#events{
   text-align: center;
   color: #fff;
